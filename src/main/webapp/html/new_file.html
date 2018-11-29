@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="../js/jquery-1.12.3.min.js" ></script>
+	<script type="text/javascript" src="../js/json2.js" ></script>
+	
+	<body>
+		<div style="width: 500px;height: 500px;border: solid 1px red;margin: 0 auto;"><canvas id="canvas" style="position: relative;"></canvas></div>
+	</body>
+	<script>
+		var row = 15;
+		var col = 15;
+		var widthAndHeight = 30;//格子宽度高度
+		//用canvas画棋盘
+		var canvas = document.getElementById("canvas");
+		$(canvas).attr({"width":row*widthAndHeight+"px","height":col*widthAndHeight+"px"});
+		$(canvas).css({"position":"relative","top":(widthAndHeight/2)+"px","left":(widthAndHeight/2)+"px"})
+		var cot = canvas.getContext("2d");
+//		cot.translate(0.5,0.5); 
+		cot.lineWidth = 1; 
+		cot.beginPath();
+		cot.fillStyle = "#EAC000";
+		cot.fillRect(0,0,row*widthAndHeight,col*widthAndHeight);
+		for(var i=0;i<=row;i++){
+			cot.moveTo((widthAndHeight*i),0);
+			cot.lineTo((widthAndHeight*i),(col*widthAndHeight));
+		}
+		for(var j=0;j<=col;j++){
+			cot.moveTo(0,(widthAndHeight*j));
+			cot.lineTo((widthAndHeight*row),(j*widthAndHeight));
+		}	
+			cot.stroke();
+//		for(var i=0;i<=row;i++){
+//			cot.moveTo(i*(widthAndHeight),0);
+//			cot.lineTo(i*(widthAndHeight),col*widthAndHeight);
+//			cot.stroke();
+//		}
+		
+	</script>
+	<!--<script type="text/javascript">
+		var c=document.getElementById("canvas");
+		var cxt=c.getContext("2d");
+		cxt.fillStyle="#FF0000";
+		cxt.fillRect(0,0,150,75);
+	</script>-->
+</html>
