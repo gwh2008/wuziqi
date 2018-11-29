@@ -1,4 +1,4 @@
-
+基于websocket的java+vue五子棋小游戏
 标准的maven工程
 工程部署名字：WuZiQi
 
